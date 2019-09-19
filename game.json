@@ -1,0 +1,51 @@
+{
+    "verbs": [
+      { "v": "EXITS",   "map": "EXITS" },
+      { "v": "QUIT",    "map": "QUIT"  },
+      { "v": "NORTH",   "map": "NORTH" },
+      { "v": "N",       "map": "NORTH" },
+      { "v": "SOUTH",   "map": "SOUTH" },
+      { "v": "S",       "map": "SOUTH" },
+      { "v": "EAST",    "map": "EAST"  },
+      { "v": "E",       "map": "EAST"  },
+      { "v": "WEST",    "map": "WEST"  },
+      { "v": "W",       "map": "WEST"  }
+    ],
+
+    "rooms": {
+      "START": {
+        "name": "Starting place",
+        "desc": "This is the place to start!",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "LOC2",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "LOC2",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "LOC2",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "LOC2",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "LOC2": {
+        "name": "Location 2",
+        "desc": "Here is the second location.",
+        "exits": [
+        ],
+        "inventory": []
+      }
+    }
+  }

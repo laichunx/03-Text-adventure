@@ -1,0 +1,128 @@
+{
+    "verbs": [
+      { "v": "EXITS",   "map": "EXITS" },
+      { "v": "QUIT",    "map": "QUIT"  },
+      { "v": "WAKE",    "map": "WAKE" },
+      { "v": "SLEEP",   "map": "SLEEP" },
+      { "v": "RELAX",   "map": "RELAX" },
+      { "v": "NOTHING", "map": "NOTHING" }
+    ],
+
+    "rooms": {
+      "START": {
+        "name": "dream",
+        "desc": "You are fighting to awaken from a nightmare. You thrash and grasp at the air as you feel pulled into the blackness.",
+        "exits": [
+          {
+            "verb": "WAKE",
+            "target": "DREAM2",
+            "condition": ""
+          },
+          {
+            "verb": "SLEEP",
+            "target": "DREAM3",
+            "condition": ""
+          },
+          {
+            "verb": "RELAX",
+            "target": "DREAM4",
+            "condition": ""
+          },
+          {
+            "verb": "NOTHING",
+            "target": "END",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "DREAM2": {
+        "name": "dream",
+        "desc": "You claw and fight against the darkness, but its tendrils still pull at your body.",
+        "exits": [
+            {
+                "verb": "WAKE",
+                "target": "AWAKE",
+                "condition": ""
+              },
+              {
+                "verb": "SLEEP",
+                "target": "DREAM3",
+                "condition": ""
+              },
+              {
+                "verb": "RELAX",
+                "target": "DREAM4",
+                "condition": ""
+              },
+              {
+                "verb": "NOTHING",
+                "target": "END",
+                "condition": ""
+              }
+            ],
+        "inventory": []
+      },
+      "DREAM3": {
+        "name": "dream",
+        "desc": "Your attempt to fall asleep breaks the spell of the dream. Suddenly the blackness disappears, and you find yourself in the gray twilight between sleep and consciousness.",
+        "exits": [
+            {
+                "verb": "WAKE",
+                "target": "AWAKE",
+                "condition": ""
+              },
+              {
+                "verb": "SLEEP",
+                "target": "TWILIGHT",
+                "condition": ""
+              },
+              {
+                "verb": "RELAX",
+                "target": "TWILIGHT",
+                "condition": ""
+              }
+            ],
+        "inventory": []
+      },
+      "DREAM4": {
+        "name": "dream",
+        "desc": "You succomb to the void, letting it pull you closer to oblivion.",
+        "exits": [
+            {
+                "verb": "WAKE",
+                "target": "DREAM2",
+                "condition": ""
+              },
+              {
+                "verb": "SLEEP",
+                "target": "DREAM3",
+                "condition": ""
+              },
+              {
+                "verb": "RELAX",
+                "target": "DREAM4",
+                "condition": ""
+              },
+              {
+                "verb": "NOTHING",
+                "target": "END",
+                "condition": ""
+              }
+            ],
+        "inventory": []
+      },
+      "AWAKE": {
+        "name": "your bedroom",
+        "desc": "You leap out of bed. Your blankets are a tangled mess on the floor, and your sheets and pillow are damp with sweat. You are glad to have survived to see another day.",
+        "exits": [],
+        "inventory": []
+      },
+      "END": {
+        "name": "oblivion",
+        "desc": "You have beome one with the void forever. Your alarm is ringing and your roommate is shaking you, but you don't respond. You will sleep for one thousand years.",
+        "exits": [],
+        "inventory": []
+      }
+    }
+  }

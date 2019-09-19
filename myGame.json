@@ -1,0 +1,151 @@
+{
+    "verbs": [
+      { "v": "EXITS",   "map": "EXITS" },
+      { "v": "QUIT",    "map": "QUIT"  },
+      { "v": "NORTH",   "map": "NORTH" },
+      { "v": "N",       "map": "NORTH" },
+      { "v": "SOUTH",   "map": "SOUTH" },
+      { "v": "S",       "map": "SOUTH" },
+      { "v": "EAST",    "map": "EAST"  },
+      { "v": "E",       "map": "EAST"  },
+      { "v": "WEST",    "map": "WEST"  },
+      { "v": "W",       "map": "WEST"  },
+      { "v": "COOK",    "map": "COOK"  },
+      { "v": "FILL",    "map": "FILL"  },
+      { "v": "UNLOCK",    "map": "UNLOCK"  },
+      { "v": "LOCK",    "map": "LOCK"  },
+      { "v": "PICK",    "map": "PICK"  },
+      { "v": "PUT",    "map": "PUT"  },
+      { "v": "SERVE",    "map": "SERVE"  },
+      { "v": "EAT",    "map": "EAT"  },
+      { "v": "COMBINE",    "map": "COMBINE"  },
+      { "v": "OPEN",    "map": "OPEN"  },
+      { "v": "START",    "map": "START"  },
+      { "v": "CUT",    "map": "CUT"  },
+      { "v": "INVENTORY",    "map": "INVENTORY"  }
+    ],
+
+    "rooms": {
+      "START": {
+            "name": "Restaurant Front",
+            "desc": "You are a gambler who own a burger restaurant and can make good burger. You just lost huge amount of money in the casino. You feel sad and your restaurant is facing close down if you cannot earn 1000 bucks. [Type 'START' To Start]",
+            "exits": [
+              {
+                "verb": "START",
+                "target": "COUNTER",
+                "condition": ""
+              }
+            ],
+            "inventory": []
+      },
+      "FRONTDOOR": {
+        "name": "Front Door",
+        "desc": "The Door",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "COUNTER",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "CASINO",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "COUNTER": {
+        "name": "Counter",
+        "desc": "You can SERVE food here",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "BURGER",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "FRONTDOOR",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "BURGER": {
+        "name": "Burger Stove",
+        "desc": "You can CUT VEGGIE, COOK MEAT, CUT POTATO, COMBINE BURGER here. Burger recipe[ Bread Veggie Cooked-Meat Cheese Bread ]",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "STORAGE",
+            "condition": ""
+          },
+          {
+            "verb": "SOUTH",
+            "target": "COUNTER",
+            "condition": ""
+          },
+          {
+            "verb": "WEST",
+            "target": "FRIES",
+            "condition": ""
+          },
+          {
+            "verb": "EAST",
+            "target": "DRINK",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "FRIES": {
+        "name": "Fries Stove",
+        "desc": "You can COOK POTATO, COMBINE FRIES here. FRIES Recipe[ Potato Salt]",
+        "exits": [
+          {
+            "verb": "EAST",
+            "target": "BURGER",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "DRINK": {
+        "name": "Drink Bar",
+        "desc": "To make a DRINK: PICK a CUP and FILL",
+        "exits": [
+          {
+            "verb": "WEST",
+            "target": "COUNTER",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "STORAGE": {
+        "name": "Storage",
+        "desc": "You can PICK up materials here! You look around and found MEAT, VEGGIE, BREAD, CHEESE and SALT",
+        "exits": [
+          {
+            "verb": "SOUTH",
+            "target": "BURGER",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      },
+      "CASINO": {
+        "name": "Casino",
+        "desc": "This is the place to start!",
+        "exits": [
+          {
+            "verb": "NORTH",
+            "target": "FRONTDOOR",
+            "condition": ""
+          }
+        ],
+        "inventory": []
+      }
+    }
+}
